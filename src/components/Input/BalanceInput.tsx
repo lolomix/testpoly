@@ -1,23 +1,23 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Button } from '@pancakeswap-libs/uikit'
-import useI18n from 'hooks/useI18n'
-import Input, { InputProps } from './Input'
+import React from "react";
+import styled from "styled-components";
+import { Button } from "@pancakeswap-libs/uikit";
+import useI18n from "../../hooks/useI18n";
+import Input, { InputProps } from "./Input";
 
 interface Props extends InputProps {
-  max: number | string
-  symbol: string
-  onSelectMax?: () => void
+  max: number | string;
+  symbol: string;
+  onSelectMax?: () => void;
 }
 
 const StyledSpacer = styled.div`
   width: ${(props) => props.theme.spacing[3]}px;
-`
+`;
 
 const StyledTokenAdornmentWrapper = styled.div`
   align-items: center;
   display: flex;
-`
+`;
 
 const StyledMaxText = styled.div`
   align-items: center;
@@ -27,15 +27,21 @@ const StyledMaxText = styled.div`
   font-weight: 700;
   height: 44px;
   justify-content: flex-end;
-`
+`;
 
 const StyledTokenSymbol = styled.span`
   color: ${(props) => props.theme.colors.primary};
   font-weight: 700;
-`
+`;
 
-const BalanceInput: React.FC<Props> = ({ max, symbol, onChange, onSelectMax, value }) => {
-  const TranslateString = useI18n()
+const BalanceInput: React.FC<Props> = ({
+  max,
+  symbol,
+  onChange,
+  onSelectMax,
+  value
+}) => {
+  const TranslateString = useI18n();
 
   return (
     <div>
@@ -46,7 +52,7 @@ const BalanceInput: React.FC<Props> = ({ max, symbol, onChange, onSelectMax, val
             <StyledSpacer />
             <div>
               <Button size="sm" onClick={onSelectMax}>
-                {TranslateString(452, 'Max')}
+                {TranslateString(452, "Max")}
               </Button>
             </div>
           </StyledTokenAdornmentWrapper>
@@ -55,9 +61,11 @@ const BalanceInput: React.FC<Props> = ({ max, symbol, onChange, onSelectMax, val
         placeholder="0"
         value={value}
       />
-      <StyledMaxText>{TranslateString(454, `${max.toLocaleString()} ${symbol} Available`)}</StyledMaxText>
+      <StyledMaxText>
+        {TranslateString(454, `${max.toLocaleString()} ${symbol} Available`)}
+      </StyledMaxText>
     </div>
-  )
-}
+  );
+};
 
-export default BalanceInput
+export default BalanceInput;
