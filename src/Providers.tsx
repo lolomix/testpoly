@@ -8,7 +8,7 @@ import { LanguageContextProvider } from "./contexts/Localisation/languageContext
 import { ThemeContextProvider } from "./contexts/ThemeContext";
 import { BlockContextProvider } from "./contexts/BlockContext";
 import { RefreshContextProvider } from "./contexts/RefreshContext";
-import store from "state";
+import store from "./state";
 
 const Providers: React.FC = ({ children }) => {
   const rpcUrl = getRpcUrl();
