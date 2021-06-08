@@ -1,8 +1,15 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Button, Heading, Text, LogoIcon, LinkExternal, Link } from '@pancakeswap-libs/uikit'
-import Page from 'components/layout/Page'
-import useI18n from 'hooks/useI18n'
+import React from "react";
+import styled from "styled-components";
+import {
+  Button,
+  Heading,
+  Text,
+  LogoIcon,
+  LinkExternal,
+  Link
+} from "@pancakeswap-libs/uikit";
+import Page from "../components/layout/Page";
+import useI18n from "../hooks/useI18n";
 
 const StyledNotFound = styled.div`
   align-items: center;
@@ -10,7 +17,7 @@ const StyledNotFound = styled.div`
   flex-direction: column;
   height: calc(100vh - 64px);
   justify-content: center;
-`
+`;
 
 const StyledLinkExternal = styled(LinkExternal)`
   text-decoration: none;
@@ -25,19 +32,21 @@ const StyledLinkExternal = styled(LinkExternal)`
     width: auto;
     fill: ${({ theme }) => theme.colors.primary};
   }
-`
+`;
 
 const NotFound = () => {
-  const TranslateString = useI18n()
+  const TranslateString = useI18n();
 
   return (
     <Page>
       <StyledNotFound>
         <LogoIcon width="64px" mb="8px" />
-        <LinkExternal href='https://quickswap.exchange/#/swap?inputCurrency=0xf4b0903774532aee5ee567c02aab681a81539e92'>BUY GAJ!</LinkExternal>
+        <LinkExternal href="https://quickswap.exchange/#/swap?inputCurrency=0xf4b0903774532aee5ee567c02aab681a81539e92">
+          BUY GAJ!
+        </LinkExternal>
       </StyledNotFound>
     </Page>
-  )
-}
+  );
+};
 
-export default NotFound
+export default NotFound;
